@@ -1,14 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="442.0" prefWidth="561.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.lab04.controller.SegreteriaStudentiController">
+<BorderPane xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.lab04.controller.SegreteriaStudentiController">
    <top>
       <Label text="Lab3_Segreteria Studenti" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="20.0" top="10.0" />
          </BorderPane.margin></Label>
    </top>
+   <center>
+      <VBox spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox spacing="10.0">
+               <children>
+                  <Label text="Corsi:" />
+                  <ComboBox fx:id="cmbCorsi" onAction="#doSelezionaCorso" promptText="Corsi" />
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <Button fx:id="btnCercaIscritti" mnemonicParsing="false" onAction="#doCercaIscrittiCorso" text="Cerca iscritti corso" />
+               </children>
+            </HBox>
+            <HBox spacing="10.0">
+               <children>
+                  <Label text="Studente:" />
+                  <TextField fx:id="txtMatricola" />
+                  <Button fx:id="btnCompletamentoAutmoatico" mnemonicParsing="false" onAction="#doCompletamentoAutmatico" style="-fx-background-color: green;" text="√" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="txtNomeStudente" editable="false" promptText="Nome" />
+                  <TextField fx:id="txtCognomeStudente" editable="false" promptText="Cognome" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" spacing="450.0">
+               <children>
+                  <Button fx:id="btnCercaCorsi" mnemonicParsing="false" onAction="#doCercaCorsiStudente" text="Cerca corsi" />
+                  <Button fx:id="btnIscrivi" mnemonicParsing="false" onAction="#doIscrivi" text="Iscrivi" />
+               </children>
+            </HBox>
+            <TextArea fx:id="txtArea" />
+            <HBox alignment="CENTER_RIGHT">
+               <children>
+                  <Button fx:id="btnReset" mnemonicParsing="false" onAction="#doReset" text="Reset" />
+               </children>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+      </VBox>
+   </center>
 </BorderPane>
