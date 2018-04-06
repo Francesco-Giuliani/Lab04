@@ -193,7 +193,7 @@ import it.polito.tdp.lab04.controller.exceptions.*;
 	    @FXML
 	    void doSelezionaCorso(ActionEvent event) {
 	    	this.selectedCourse = this.cmbCorsi.getValue();
-	    	this.txtArea.appendText("Corso selezionato: "+this.selectedCourse);
+	    	this.txtArea.appendText("Corso selezionato: "+this.selectedCourse+"\n");
 	    }
 
 	    @FXML
